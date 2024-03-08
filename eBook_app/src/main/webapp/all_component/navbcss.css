@@ -1,0 +1,87 @@
+@charset "ISO-8859-1";
+
+.bg-custom{
+	background:linear-gradient(to bottom, #33ccff 3%, #ff99cc 100%);
+}
+
+#nav{
+ 	color:black;
+ }
+#nav:hover{
+	background-color:black;
+	color:white;
+	border-radius:1px;
+	transform: scale(1.05);
+	transition: transform 0.5s ease;
+}
+#dropdownMenuButton{
+  color: black;
+  background-color: transparent;
+  border:  transparent;
+  border-radius:0px;
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer; 
+}
+#dropdownMenuButton:hover{
+	background-color:black;
+	color:white;
+	border-radius:1px;
+	 transform: scale(1.05);
+	 transition: transform 0.5s ease;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
+  color: #33ccff;
+}
+
+#click {
+  color: black;
+  background-color: transparent;
+  border:  solid black;
+  border-radius:0px;
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#click:hover {
+  background-color: #b2ebf2;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#add2cart{
+  color: black;
+  background-color: transparent;
+  border:  solid black;
+  border-radius:0px;
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#add2cart:hover{
+	background-color: red;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	
+}
+
+#viewdetail{
+  color: black;
+  background-color: transparent;
+  border:  solid black;
+  border-radius:0px;
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+#viewdetail:hover{
+	background-color: light-green;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	
+}
