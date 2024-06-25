@@ -39,7 +39,7 @@
 		  String email=u.getEmail();
 		  
 		  BookDAOImpl dao=new BookDAOImpl(DBconnect.getconn());
-		  List<BookDtls> list=dao.getBookByOld(email,"Old");
+		  List<BookDtls> list=dao.getBookByOld(email,"old");
 		  for(BookDtls b:list){
 		  %>
 		  	<tr>

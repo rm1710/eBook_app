@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Your Order</title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 .table {
@@ -83,7 +83,10 @@
 		<c:redirect url="login.jsp"></c:redirect>
 	</c:if>
 
+	
+
 	<%@include file="all_component/navbar.jsp"%>
+	
 		<div class="container">
 		<h3 class="text-center mt-2">Your Orders</h3>
 			<table class="table table-striped mt-3">
@@ -95,6 +98,8 @@
 			      <th scope="col">Author</th>
 			      <th scope="col">Price</th>
 			      <th scope="col">Payment Type</th>
+			      <th scope="col">Date&Time</th>
+			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -112,6 +117,8 @@
 			      <td><%=b.getAuthor() %></td>
 			      <td><%=b.getPrice() %></td>
 			      <td><%=b.getPaymentType() %></td>
+			      <td><%=b.getOrderTimestamp() %></td>
+			      <td><a href="cancelOrder?id=<%=b.getId() %>&&cardpayment=<%=b.getPaymentType() %>" class="btn btn-danger">Cancel Order</a></td>
 			    </tr>
 			    <%} %>
 			  </tbody>

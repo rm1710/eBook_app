@@ -47,7 +47,7 @@
 							<b>Category: </b><%=b.getCategory()%></p>
 						<div class="row-center">
 							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none"><i
+								href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none" id="viewdetail"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
 						</div>
 					</div>

@@ -7,11 +7,9 @@ public class User {
     private String email;
     private String password;
     private String phno;
-    private String address;
-    private String landmark;
-    private String city;
-    private String state;
-    private String pincode;
+    private String question;
+    private String answer;
+    
 
     public User() {
         super();
@@ -58,51 +56,26 @@ public class User {
         this.phno = phno;
     }
 
-    public String getAddress() {
-        return address;
-    }
+    public String getQuestion() {
+		return question;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public void setQuestion(String question) {
+		this.question = question;
+	}
 
-    public String getLandmark() {
-        return landmark;
-    }
+	public String getAnswer() {
+		return answer;
+	}
 
-    public void setLandmark(String landmark) {
-        this.landmark = landmark;
-    }
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getPincode() {
-        return pincode;
-    }
-
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
-    }
-
-    @Override
+	@Override
     public String toString() {
-        return "User [id=" + id + ", email=" + email + ", password=" + password + ", phno=" + phno + ", address="
-                + address + ", landmark=" + landmark + ", city=" + city + ", state=" + state + ", pincode=" + pincode
-                + "]";
+        return "User [id=" + id + ", email=" + email + ", password=" + password + ", phno=" + phno + ", question="
+                + question + ", answer=" + answer + "]";
     }
 
 }

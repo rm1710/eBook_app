@@ -9,24 +9,25 @@
 <title>Insert title here</title>
 <%@include file="all_component/allCss.jsp" %>
 </head>
-<body>
+<body style="background-color:#f8bbd0">
 	<%@include file="all_component/navbar.jsp" %>
 	<div class="container text-center mt-3">
-		<i class="fas fa-check-circle fa-5x text-success"></i>
 								<c:if test="${not empty OrfailedMsg }">
                                     <h3 class="text-center text-danger">${OrfailedMsg}</h3>
                                     <c:remove var="OrfailedMsg" scope="session" />
                                 </c:if>
                                 
                                 <c:if test="${not empty OrsuccMsg }">
-                                    <h3 class="text-center text-success">${OrsuccMsg}</h3>
+                                    <h1 class="text-center text-success">${OrsuccMsg}</h1>
                                     <c:remove var="OrsuccMsg" scope="session" />
                                 </c:if>
-		<h1>Thank You</h1>
-		<h2>Your Order Successfully</h2>
-		<h5>With in 7 days your Book will be Delivered on your Address</h5>
-		<a href="index.jsp" class="btn btn-primary mt-3" id="click">Home</a>
+		<c:if test="${not empty cardpay }">
+			<h1 class="text-center text-info">${cardpay}</h1>
+			<c:remove var="cardpay" scope="session" />
+		</c:if>
+		<a href="index.jsp" class="btn btn-primary mt-3" id="click">Continue Shopping</a>
 		<a href="order.jsp" class="btn btn-danger mt-3" id="click">View Order</a>
 	</div>
+	<div style="margin-top:330px"><%@include file="all_component/footer.jsp" %></div>
 </body>
 </html>

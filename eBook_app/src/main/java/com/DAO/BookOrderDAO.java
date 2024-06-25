@@ -9,6 +9,8 @@ public interface BookOrderDAO {
 	
 	public List<Book_order>getBook(String email);
 	
+	public boolean cancelOrder(int id);
+	
 	public List<Book_order> getAllOrder();
 	
 }

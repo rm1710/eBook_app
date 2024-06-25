@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>edit books details</title>
 <%@include file="allcss.jsp"%>
 </head>
 <body style="background:#e3f2fd">

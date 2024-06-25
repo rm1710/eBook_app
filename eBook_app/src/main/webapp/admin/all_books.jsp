@@ -77,6 +77,17 @@
 .table tbody tr {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+.table th:nth-child(1),
+.table td:nth-child(1),
+.table th:nth-child(9),
+.table td:nth-child(9) {
+  width: 50px;
+}
+.table th:nth-child(10),
+.table td:nth-child(10) {
+  width: 200px; /* Adjust the width as needed */
+}
 </style>
 </head>
 <body>
@@ -100,7 +111,7 @@
 <table class="table table-striped">
   <thead class="bg-primary">
     <tr>
-      <th scope="col">ID</th>
+   	  <th scope="col">No. of Books</th>
       <th scope="col">Image</th>
       <th scope="col">Book Name</th>
       <th scope="col">Author</th>
@@ -108,6 +119,7 @@
       <th scope="col">Book Category</th>
       <th scope="col">Category</th>
       <th scope="col">Status</th>
+      <th scope="col">E-mail</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -115,10 +127,11 @@
   <%
   	BookDAOImpl dao=new BookDAOImpl(DBconnect.getconn());
   	List<BookDtls> list=dao.getAllBooks();
+  	int serialNumber = 1;
   	for(BookDtls b:list){
   %>
   <tr>
-      <td><%=b.getBookId() %></td>
+  	  <td><%= serialNumber++ %></td>
       <td><img src="../books/<%=b.getPhotoName()%>" style="width:50px;height:50px;"></td>
       <td><%=b.getBookName() %></td>
       <td><%=b.getAuthor() %></td>
@@ -126,6 +139,7 @@
       <td><%=b.getBookCategory() %></td>
       <td><%=b.getCategory() %></td>
       <td><%=b.getStatus() %></td>
+      <td><%=b.getEmail() %>
      <td>
      	<a href="edit_books.jsp?id=<%=b.getBookId()%>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
      	<a href="../delete?id=<%=b.getBookId()%>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>Delete</a>

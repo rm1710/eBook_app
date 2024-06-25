@@ -24,6 +24,9 @@
 <%@include file="all_component/allCss.jsp"%>
 </head>
 <body style="background-color: #e0f7fa;">
+<%
+User u=(User) session.getAttribute("userobj");
+%>
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid p-3">
 		<div class="row">
@@ -42,13 +45,29 @@
 						<p align="left">
 							<b>Author: </b><%=b.getAuthor()%></p>
 						<p align="left">
-							<b>Book Category: </b><%=b.getBookCategory()%></p>
-						<p align="left">
-							<b>Category: </b><%=b.getCategory()%></p>
+							<b>Book Category: </b><%=b.getBookCategory()%>
+						<div class="row">
+						<%
+						if(b.getCategory().equals("old")){ 
+						%>
+						
+						<b>Category: </b><%=b.getCategory() %></p>
+							<div class="row-center">
+								<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+									class="btn btn-danger btn-sm ml-1" style="pointer-events: none;" id="viewdetail"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
+							</div>
+						<%}else{%>
+						<b>Category: </b><%=b.getCategory() %></p>
 						<div class="row-center">
-							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none"><i
-								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice()%></a>
+							<%if(u==null) {%>
+								<a href="login.jsp" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
+							<%}else{%>
+								<a href="cart?bid=<%=b.getBookId() %>&& uid=<%=u.getId() %>" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
+							<%} %>
+							 <a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1">View Details</a> 
+							 <a href="" class="btn btn-danger btn-sm ml-1" style="pointer-events: none;" id="viewdetail"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
+						</div>
+						<%} %>
 						</div>
 					</div>
 				</div>

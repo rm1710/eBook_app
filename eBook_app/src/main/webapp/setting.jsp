@@ -102,8 +102,6 @@ body {
 				</a>
 			</div>
 			
-			
-			
 			<div class="col-md-6 mt-4">
 				<a href="order.jsp">
 					<div class="card">

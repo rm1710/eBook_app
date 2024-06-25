@@ -1,7 +1,7 @@
 
 package com.DAO;
 
-import com.entity.BookDtls;
+import com.entity.*;
 import java.sql.*;
 import java.util.*;
 
@@ -112,7 +112,7 @@ public class BookDAOImpl implements BookDAO {
 			String sql="update book_dtls set bookname=?,author=?,price=?,status=? where bookId=?";
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ps.setString(1, b.getBookName());
-			ps.setString(2,b.getAuthor());
+			ps.setString(2, b.getAuthor());
 			ps.setString(3, b.getPrice());
 			ps.setString(4, b.getStatus());
 			ps.setInt(5, b.getBookId());

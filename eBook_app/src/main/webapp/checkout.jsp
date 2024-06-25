@@ -67,6 +67,10 @@ tr:hover {
 		<c:remove var="failedMsg" scope="session"/>
 	</c:if>
 	
+	<c:if test="${not empty OrfailedMsg }">
+		<h4 class="text-center text-danger">${OrfailedMsg}</h4>
+		<c:remove var="OrfailedMsg" scope="session" />
+	</c:if>
 	
 	
 	<div class="container">
@@ -109,7 +113,7 @@ tr:hover {
 									<td>Total Price</th>
 									<td></td>
 									<td></td>
-									<td><%=totalPrice %></td>
+									<td><i class="fa-solid fa-indian-rupee-sign"></i><%=totalPrice %></td>
 								</tr>
 								
 							</tbody>
@@ -125,52 +129,54 @@ tr:hover {
 						<input type="hidden" value="${userobj.id }" name="id">
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" name="uname" value="${userobj.name }" required>
+									<label for="inputEmail4" id="fo">Name</label> <input type="text"
+										class="form-control" id="box" name="uname" value="${userobj.name }" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" name="email" value="${userobj.email }" required>
+									<label for="inputPassword4" class="fo">Email</label> <input type="email"
+										class="form-control" id="box" name="email" value="${userobj.email }" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Mobile No.</label> <input
-										type="number" class="form-control" id="inputEmail4" name="phno"
+									<label for="inputEmail4" class="fo">Mobile No.</label> <input
+										type="number" class="form-control" id="box" name="phno"
 										value="${userobj.phno }" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" id="inputPassword4" placeholder="Address" name="address" required>
+									<label for="inputPassword4" id="fo">Address</label> <input type="text"
+										class="form-control" id="box" placeholder="Address" name="address" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" id="inputEmail4" placeholder="Landmark" name="lm" required>
+									<label for="inputEmail4" id="fo">Landmark</label> <input type="text"
+										class="form-control" id="box" placeholder="Landmark" name="lm" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">District</label> <input type="text"
-										class="form-control" id="inputPassword4" placeholder="District" name="dist" required>
+									<label for="inputPassword4" id="fo">District</label> <input type="text"
+										class="form-control" id="box" placeholder="District" name="dist" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" id="inputEmail4" placeholder="State" name="state"required>
+									<label for="inputEmail4" id="fo">State</label> <input type="text"
+										class="form-control" id="box" placeholder="State" name="state"required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Pincode</label> <input
-										type="number" class="form-control" id="inputPassword4" name="pincode"
+									<label for="inputPassword4" id="fo">Pincode</label> <input
+										type="number" class="form-control" id="box" name="pincode"
 										placeholder="Pincode" required>
 								</div>
 
 								
 								<div class="form-group col-md-12">
-									<label>Payment Mode</label>
-									<select class="form-control" name="payment">
+									<label id="fo">Payment Mode</label>
+									<select id="box" class="form-control" name="payment">
 										<option value="noselect">--Select--</option>
-										<option value="cod">Cash on Delivery</option>
+										<option value="COD">Cash on Delivery</option>
+										<option value="Card Payment">Card Payment</option>
 									</select>
 								</div>
 								
-								<div class="text-center">
-									<button class="btn btn-warning center" id="click" >Order Now</button>
-									<a href="index.jsp" class="btn btn-success center" id="click" >Continue shopping</a>
+								<div class="btn-center">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<button class="btn btn-warning" id="click" >Order Now</button>&nbsp;
+									<a href="index.jsp" class="btn btn-success" id="click">Continue shopping</a>
 								</div>
 							</div>
 						</form>

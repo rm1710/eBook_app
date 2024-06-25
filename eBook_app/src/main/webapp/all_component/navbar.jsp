@@ -10,14 +10,14 @@
 		<div class="col-md-6" style="margin-left:100px">
 			<form class="form-inline my-2 my-lg-0" action="search.jsp" method="post">
 				<input style="border:solid blue; border-radius:1px " class="form-control mr-sm-2" type="search" name="ch"
-					placeholder="Search" aria-label="Search">
+					placeholder="Search Book here" aria-label="Search">
 				<button class="btn btn-primary my-2 my-sm-0" id="click"type="submit">Search</button>
 			</form>
 		</div>
 	
 		<c:if test ="${not empty userobj}">
 			<div class="col-md-3 navbar-collapse" align="right" style="margin-left:-220px;margin-top:-11px;">
-				<a href="" class="btn text-dark"style="margin-left:-220px; pointer-events: none" ><img src="img/cont.png" height="45px" width="50px">Welcome, ${userobj.name }</a>
+				<a href="" class="btn text-dark"style="margin-left:-220px; pointer-events: none" ><img src="img/cont.png" height="45px" width="50px">Hello, ${userobj.name }</a>
 				<a href="checkout.jsp" class="btn btn-warning text-dark" id="click"><img src="img/cart.png" height="25px" width="25px"> Cart</a>
 				<a href="logout" class="btn btn-primary text-dark" id="click" style="margin-left:2px; margin-right:-120px;"><i class="fa-solid fa-right-to-bracket"></i> Logout</a>
 				
@@ -65,12 +65,11 @@
 		</ul>
 		<c:if test ="${not empty userobj}">
 			<form class="form-inline my-2 my-lg-0">
-				<a href="setting.jsp" class="btn btn-light my-2 my-sm-0" id="click" type="submit"><i class="fa-solid fa-gear"></i> Setting</a>
-				<button class="btn btn-light my-2 my-sm-0 ml-2" id="click"type="submit"><i class="fa-solid fa-phone"></i> contact us</button>
+				<a href="setting.jsp" class="btn btn-light my-2 my-sm-0" id="click" type="submit"><i class="fa-solid fa-user"></i> Your Account</a>
 			</form>
 		</c:if>
 		<c:if test="${empty userobj }">
-			<button class="btn btn-light my-2 my-sm-0 ml-2" id="click"type="submit"><i class="fa-solid fa-phone"></i> contact us</button>
+			<a href="helpline.jsp" class="btn btn-light my-2 my-sm-0 ml-2" id="click"type="submit"><i class="fa-solid fa-phone"></i> contact us</a>
 		</c:if>
 	</div>
 </nav>

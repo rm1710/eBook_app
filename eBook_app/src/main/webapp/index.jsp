@@ -12,7 +12,7 @@
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 .dynamic-back-img {
-    height: 50vh;
+    height: 55vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -43,9 +43,35 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   background-color: #f9fbe7;
+}
+
+@keyframes moveSentence {
+    0% {
+        transform: translateY(20px) scale(0.8) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+.container-fluid {
+    text-align: left;
+}
+
+.text-Left {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.animated-sentence {
+    font-size: 35px;
+    margin-top: 0px;
+    animation: moveSentence 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 </style>
@@ -54,8 +80,7 @@ body {
     var imageUrls = [
       'img/ebook1.jpg',
       'img/ebook2.jpg',
-      'img/ebook3.jpg'
-      // Add more image URLs as needed
+      'img/ebo.png'
     ];
 
     var currentImageIndex = 0;
@@ -79,11 +104,13 @@ body {
 	%>
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid back-img">
-		<h1 class="text-Left" style="color: #ffffff; font-size: 50px;">Discover
+		<h1 class="text-Left animated-sentence" style="color: #ffffff; font-size: 50px;">Discover
 			new reads online</h1>
-		<p style="color: #ffffff; font-size: 35px;">Explore a wide
+		<p class="animated-sentence" style="color: #ffffff; font-size: 35px;">Explore a wide
 			collection of books and order conveniently from the comfort of your
 			home</p>
+			<div class="line"></div>
+	        <div class="line"></div>
 	</div>
 	<hr>
 
@@ -98,7 +125,7 @@ body {
 			for(BookDtls b:list2){
 			%>
 			<div class="col-md-3">
-			<div class="card crd-ho" style="margin-right:-20px">
+			<div class="card crd-ho" style="margin-right:-24px">
 					<div class="card-body text-center" >
 						<img src="books/<%=b.getPhotoName() %>"
 							style="width: 160px; height: 200px;">
@@ -109,7 +136,7 @@ body {
 						<p align="left">
 						
 						<%
-						if(b.getCategory().equals("Old")){ 
+						if(b.getCategory().equals("old")){ 
 						%>
 						
 						<b>Category: </b><%=b.getCategory() %></p>
@@ -127,7 +154,7 @@ body {
 							<%} %>
 							
 							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1" >View Details</a> 
-							<a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
+							<a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none" id="viewdetail"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 						</div>
 						<%} %>
 						
@@ -158,7 +185,7 @@ body {
 			for(BookDtls b:list){
 			%>
 			<div class="col-md-3">
-			<div class="card crd-ho" style="margin-right:-20px">
+			<div class="card crd-ho" style="margin-right:-24px">
 					<div class="card-body text-center" >
 						<img src="books/<%=b.getPhotoName() %>" alt=""
 							style="width: 160px; height: 200px;">
@@ -174,7 +201,7 @@ body {
 								<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-danger btn-sm" ><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
 							<%} %>
 							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1" >View Details</a> 
-							<a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
+							<a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none" id="viewdetail"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 						</div>
 					</div>
 				</div>
@@ -212,7 +239,7 @@ body {
 						<p align="left"><b>Category: </b><%=b.getCategory() %></p>
 						<div class="row-center">
 								 <a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1" >View Details</a> 
-								 <a href="" style=" pointer-events: none" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
+								 <a href="" style=" pointer-events: none" class="btn btn-danger btn-sm ml-1" id="viewdetail"><i class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 						</div>
 					</div>
 				</div>

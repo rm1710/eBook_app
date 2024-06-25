@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 .bg-custom{
-	background:linear-gradient(to bottom, #33ccff 3%, #ff99cc 100%);
+	background:linear-gradient(to bottom, #ff99cc 3%, #33ccff 100%);;
 }
 
 #nav{
@@ -52,6 +52,7 @@ a:hover {
 #click:hover {
   background-color: #b2ebf2;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
   transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -79,9 +80,19 @@ a:hover {
   transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
   cursor: pointer;
 }
+
 #viewdetail:hover{
 	background-color: light-green;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	
+}
+
+#fo{
+	font-weight:bold;
+}
+
+#box{
+	border-radius:1px;
+	border:solid;
 }

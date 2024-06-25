@@ -11,13 +11,12 @@
 
 		<div class="col-md-3" align="right" style="margin-left:600px;margin-top:5px;">
 			<c:if test="${not empty userobj }">
-				<a class="btn btn-success"><i class="fa-solid fa-user"></i> Welcome, ${ userobj.name }</a> 
-				<a data-toggle="modal" data-target="#exampleModal" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
+				<a href="" class="btn text-dark"style="margin-left:-220px; pointer-events: none; margin-top:-12px" ><img src="../img/cont.png" height="45px" width="50px">Welcome, ${userobj.name }</a> 
+				<a data-toggle="modal" style="margin-top:-12px" id="click"data-target="#exampleModal" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
 			</c:if>
 			
 			<c:if test="${empty userobj }">
 			<a href="../login.jsp" class="btn btn-success" id="click"><i class="fa-solid fa-right-to-bracket"></i> Login</a> 
-			<a href="../register.jsp" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register</a>
 			</c:if>
 		</div>
 	</div>
@@ -65,9 +64,5 @@
 					<span class="sr-only">(current)</span>
 			</a></li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fa-solid fa-gear"></i> Setting</button>
-			<button class="btn btn-light my-2 my-sm-0 ml-2" type="submit"><i class="fa-solid fa-phone"></i> contact us</button>
-		</form>
 	</div>
 </nav>

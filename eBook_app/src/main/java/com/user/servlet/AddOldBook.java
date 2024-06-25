@@ -24,7 +24,7 @@ public class AddOldBook extends HttpServlet {
             String author = req.getParameter("author");
             String price = req.getParameter("price");
             String bookcategories = req.getParameter("bookcategory");
-            String categories ="Old";
+            String categories ="old";
             String status ="Active";
             Part filepart = req.getPart("bimg");
             String fileName =filepart.getSubmittedFileName();

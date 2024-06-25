@@ -46,7 +46,7 @@
 				<h2><%=b.getBookName() %></h2>
 
 				<%
-				if("Old".equals(b.getCategory()))
+				if("old".equals(b.getCategory()))
 				{%>
 				<h5 class="text-info">Contact To Seller</h5>
 				<h5 class="text-info">
@@ -74,32 +74,23 @@
 				<%if("old".equals(b.getCategory())){ %>
 				<div class="text-center p-3">
 					<a href="index.jsp" class="btn btn-primary">Continue Shopping</a> <a
-						href="" class="btn btn-danger" style="pointer-events: none"><i
+						href="" class="btn btn-danger" ><i
 						class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 				</div>
 				<%
 				} else {
-				if (u == null) {
 				%>
-				<a href="login.jsp" class="btn btn-danger btn-sm"><i
-					class="fa-solid fa-cart-plus"></i>Add to Cart</a>
-				<%
-				} else {
-				%>
-				<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
-					class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add
-					to Cart</a>
-				<%
-				}
-				%>
-
+					<%if(u==null) {%>
+								<a href="login.jsp" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
+							<%}else{%>
+								<a href="cart?bid=<%=b.getBookId() %>&& uid=<%=u.getId() %>" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
+							<%} %>
 				 <a href=""
-					class="btn btn-success btn-sm ml-1" style="pointer-events: none"><i
+					class="btn btn-success btn-sm ml-1" style="pointer-events: none" id="viewdetail"><i
 					class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 			</div>
 			<%} %>
 		</div>
 		</div>
-	</div>
 </body>
 </html>

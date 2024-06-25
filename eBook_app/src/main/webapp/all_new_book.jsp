@@ -96,7 +96,7 @@ User u=(User) session.getAttribute("userobj");
 			for(BookDtls b:list){
 			%>
 			<div class="col-md-3">
-				<div class="card crd-ho" style="margin-right: -20px">
+				<div class="card crd-ho" style="margin-right: -8px">
 					<div class="card-body text-center">
 						<img src="books/<%=b.getPhotoName() %>" alt=""
 							style="width: 160px; height: 200px;">
@@ -115,7 +115,7 @@ User u=(User) session.getAttribute("userobj");
 								<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i>Add to Cart</a>
 							<%} %>
 							 <a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-1">View Details</a> 
-							 <a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none"><i
+							 <a href="" class="btn btn-danger btn-sm ml-1" style=" pointer-events: none" id="viewdetail"><i
 								class="fa-solid fa-indian-rupee-sign"></i> <%=b.getPrice() %></a>
 						</div>
 					</div>

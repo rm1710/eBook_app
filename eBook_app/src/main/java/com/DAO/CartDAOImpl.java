@@ -36,6 +36,32 @@ public class CartDAOImpl implements CartDAO {
 		}
 		return f;
 	}
+	
+	@Override
+	public boolean paymentdetails(paymentdtls p) {
+		boolean f=false;
+		
+		try {
+			String sql="insert into payment_dtls(trans_id,ch_Name,cno,cvv,email,mobNo,Amt) values(?,?,?,?,?,?,?)";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setInt(1, p.getTransId());
+            ps.setString(2, p.getChName());
+            ps.setString(3, p.getCno());
+            ps.setString(4, p.getCvv());
+            ps.setString(5, p.getEmail());
+            ps.setString(6, p.getMobNo());
+            ps.setString(7, p.getAmount());
+			
+			int i=ps.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
 
 	@Override
 	public List<Cart> getBookByUser(int userId) {

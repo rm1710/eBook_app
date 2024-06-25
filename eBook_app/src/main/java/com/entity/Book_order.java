@@ -1,5 +1,7 @@
 package com.entity;
 
+import java.sql.*;
+
 public class Book_order {
 	private int id;
 	private String orderId;
@@ -11,6 +13,7 @@ public class Book_order {
 	private String author;
 	private String price;
 	private String paymentType;
+	private Timestamp orderTimestamp;
 	public Book_order() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -75,6 +78,13 @@ public class Book_order {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
+	public Timestamp getOrderTimestamp() {
+		return orderTimestamp;
+	}
+	public void setOrderTimestamp(Timestamp orderTimestamp) {
+		this.orderTimestamp = orderTimestamp;
+	}
+	
 	
 	
 	

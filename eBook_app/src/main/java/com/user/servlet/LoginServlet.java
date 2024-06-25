@@ -1,6 +1,9 @@
 package com.user.servlet;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -21,15 +24,20 @@ public class LoginServlet extends HttpServlet {
 
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-
-            if ("ritesh@gmail.com".equals(email) && "rm123".equals(password)) {
-                User us = new User();
-                us.setName("Admin");
-                session.setAttribute("userobj", us);
-                resp.sendRedirect("admin/home.jsp");
+            String hashedPassword = xpwd(password);
+            
+            if (dao.admin(email, password)) {
+            	User adminUser = dao.isadmin(email, password);
+                if (adminUser != null) {
+                    session.setAttribute("userobj", adminUser);
+                    resp.sendRedirect("admin/home.jsp");
+                } else {
+                    session.setAttribute("failedMsg", "Email & Password is Invalid");
+                    resp.sendRedirect("login.jsp");
+                }
             } else {
 
-                User us = dao.login(email, password);
+                User us = dao.login(email, hashedPassword);
                 if (us != null) {
                     session.setAttribute("userobj", us);
                     resp.sendRedirect("index.jsp");
@@ -44,5 +52,24 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+    private String xpwd(String password) {
+    	try {
+	           MessageDigest digest = MessageDigest.getInstance("SHA-256");
+	            byte[] hash = digest.digest(password.getBytes());
+
+	            StringBuilder hexString = new StringBuilder();
+	            for (byte b : hash) {
+	                String hex = Integer.toHexString(0xff & b);
+	                if (hex.length() == 1)
+	                    hexString.append('0');
+	                hexString.append(hex);
+	            }
+	            return hexString.toString();
+	        } catch (NoSuchAlgorithmException e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+    }
+    
 
 }

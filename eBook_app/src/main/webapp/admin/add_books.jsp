@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Books</title>
 <%@include file="allcss.jsp"%>
 </head>
 <body style="background:#e3f2fd">
@@ -58,6 +58,9 @@
 							<option >Novel</option>
 							<option >Science Fiction</option>
 							<option >Fantasy</option>
+							<option >Romance</option>
+							<option >fiction</option>
+							<option >Drama</option>
 							<option >Horror</option>
 							<option >Biography</option>
 							<option >Autobiography</option>

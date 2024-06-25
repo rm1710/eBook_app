@@ -19,7 +19,7 @@ public class BookOrderImpl implements BookOrderDAO{
 	public boolean saveOrder(List<Book_order> list) {
 		boolean f=false;
 		try {
-			String sql="insert into book_order(order_id,user_name, email, address, phone, book_name, author, price, payment) values(?,?,?,?,?,?,?,?,?)";
+			String sql="insert into book_order(order_id,user_name, email, address, phone, book_name, author, price, payment,datetime) values(?,?,?,?,?,?,?,?,?,?)";
 			conn.setAutoCommit(false);
 			PreparedStatement ps=conn.prepareStatement(sql);
 			for(Book_order b: list) {
@@ -32,6 +32,7 @@ public class BookOrderImpl implements BookOrderDAO{
 				ps.setString(7, b.getAuthor());
 				ps.setString(8, b.getPrice());
 				ps.setString(9, b.getPaymentType());
+				ps.setTimestamp(10,b.getOrderTimestamp());
 				ps.addBatch();
 			}
 			
@@ -53,7 +54,7 @@ public class BookOrderImpl implements BookOrderDAO{
 		List<Book_order> list = new ArrayList<Book_order>();
 		Book_order o=null;
 		try {
-			String sql="select * from book_order where email=?";
+			String sql="select * from book_order where email=? ORDER BY id DESC";
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ResultSet rs=ps.executeQuery();
@@ -69,6 +70,7 @@ public class BookOrderImpl implements BookOrderDAO{
 				o.setAuthor(rs.getString(8));
 				o.setPrice(rs.getString(9));
 				o.setPaymentType(rs.getString(10));
+				o.setOrderTimestamp(rs.getTimestamp(11));
 				list.add(o);
 			}
 		}catch(Exception e) {
@@ -77,12 +79,31 @@ public class BookOrderImpl implements BookOrderDAO{
 		return list;
 	}
 
+	
+	@Override
+	public boolean cancelOrder(int id) {
+		 boolean isCancelled = false;
+	        try {
+	            String sql = "DELETE FROM book_order WHERE id=?";
+	            PreparedStatement ps = conn.prepareStatement(sql);
+	            ps.setInt(1, id);
+	            int rowsAffected = ps.executeUpdate();
+	            if (rowsAffected > 0) {
+	                isCancelled = true;
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return isCancelled;
+	}
+	
+
 	@Override
 	public List<Book_order> getAllOrder() {
 		List<Book_order> list = new ArrayList<Book_order>();
 		Book_order o=null;
 		try {
-			String sql="select * from book_order ";
+			String sql="select * from book_order ORDER BY id DESC ";
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
@@ -97,6 +118,7 @@ public class BookOrderImpl implements BookOrderDAO{
 				o.setAuthor(rs.getString(8));
 				o.setPrice(rs.getString(9));
 				o.setPaymentType(rs.getString(10));
+				o.setOrderTimestamp(rs.getTimestamp(11));
 				list.add(o);
 			}
 		}catch(Exception e) {
