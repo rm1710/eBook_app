@@ -14,7 +14,6 @@
   transition: transform 0.5s ease, box-shadow 0.3s ease, margin 0.3s ease;
   margin-bottom: 20px;
 }
-
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
