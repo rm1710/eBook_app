@@ -1,6 +1,6 @@
 # 📚 eBook Platform
 
-Welcome to the **eBook Platform** project! This web application offers users a seamless experience to explore, buy, and sell eBooks. It comes with user-friendly interfaces for both admins and users, along with key features such as login and registration, admin controls, and more.
+Welcome to the **eBook Platform** project! This web application offers users a seamless experience to explore, buy and sell eBooks. It comes with user-friendly interfaces for both admins and users, along with key features such as login and registration, admin controls, and more.
 
 ## 🚀 Features
 
