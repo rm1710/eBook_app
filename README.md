@@ -13,23 +13,23 @@ Welcome to the **eBook Platform** project! This web application offers users a s
 ## 🖼️ UI Previews
 
 ### Homepage
-<img src="ebookUI/ebook1.png" alt="eBook Homepage" width="400">  
-<img src="ebookUI/ebook2.png" alt="eBook Homepage" width="400">  
-<img src="ebookUI/ebook3.png" alt="eBook Homepage" width="400">
+<img src="ebookUI/ebook1.png" alt="eBook Homepage" >  
+<img src="ebookUI/ebook2.png" alt="eBook Homepage" >  
+<img src="ebookUI/ebook3.png" alt="eBook Homepage" >
 
 ### Login and Registration Pages
-<img src="ebookUI/ebook4.png" alt="Login Page" width="400">  
-<img src="ebookUI/register.png" alt="Registration Page" width="400">
+<img src="ebookUI/ebook4.png" alt="Login Page" >  
+<img src="ebookUI/register.png" alt="Registration Page" >
 
 ### Admin UI
-<img src="ebookUI/adminloginPage.png" alt="Admin Login Page" width="400">  
-<img src="ebookUI/AdminBook.png" alt="Admin Book Management" width="400">  
-<img src="ebookUI/orderPage.png" alt="Order Management" width="400">
+<img src="ebookUI/adminloginPage.png" alt="Admin Login Page" >  
+<img src="ebookUI/AdminBook.png" alt="Admin Book Management" >  
+<img src="ebookUI/orderPage.png" alt="Order Management" >
 
 ### User UI
-<img src="ebookUI/userAcc.png" alt="User Account" width="400">  
-<img src="ebookUI/sellOldfeature.png" alt="Sell Old Books" width="400">  
-<img src="ebookUI/cartpage.png" alt="Shopping Cart" width="400">
+<img src="ebookUI/userAcc.png" alt="User Account">  
+<img src="ebookUI/sellOldfeature.png" alt="Sell Old Books" >  
+<img src="ebookUI/cartpage.png" alt="Shopping Cart" >
 
 ## 🛠️ Technologies Used
 
