@@ -2,6 +2,11 @@
 
 Welcome to the **eBook Platform** project! This web application offers users a seamless experience to explore, buy and sell eBooks. It comes with user-friendly interfaces for both admins and users, along with key features such as login and registration, admin controls, and more.
 
+## 🛠️ Technologies Used
+
+- **Frontend**: JSP (Java Server Page)
+- **Backend**: Java
+- **Database**: MySQL
 ## 🚀 Features
 
 - **User Account**: Register and log in to access the eBook marketplace.
@@ -30,9 +35,3 @@ Welcome to the **eBook Platform** project! This web application offers users a s
 <img src="ebookUI/userAcc.png" alt="User Account">  
 <img src="ebookUI/sellOldfeature.png" alt="Sell Old Books" >  
 <img src="ebookUI/cartpage.png" alt="Shopping Cart" >
-
-## 🛠️ Technologies Used
-
-- **Frontend**: JSP (Java Server Page)
-- **Backend**: Java
-- **Database**: MySQL
