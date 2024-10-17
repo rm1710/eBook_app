@@ -17,6 +17,6 @@ Admin UI
 User UI
 <img src="ebookUI/userAcc.png" alt="User Account" width="400"> <img src="ebookUI/sellOldfeature.png" alt="Sell Old Books" width="400"> <img src="ebookUI/cartpage.png" alt="Shopping Cart" width="400">
 🛠️ Technologies Used
-Frontend: JSP(java Server Page)
+Frontend: JSP (Java Server Page)
 Backend: Java
 Database: MySQL
