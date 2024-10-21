@@ -4,7 +4,7 @@ Welcome to the **eBook Platform** project! This web application offers users a s
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: JSP (Java Server Page)
+- **Frontend**: JSP (Java Server Page), Bootstrap
 - **Backend**: Java
 - **Database**: MySQL
 ## 🚀 Features
