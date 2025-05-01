@@ -31,7 +31,6 @@ public class OrderServlet extends HttpServlet {
 			
 			HttpSession session=req.getSession();
 			
-			
 			String name=req.getParameter("uname");
 			String email=req.getParameter("email");
 			String phno=req.getParameter("phno");
@@ -83,7 +82,9 @@ public class OrderServlet extends HttpServlet {
 					resp.sendRedirect("checkout.jsp");
 				}else if("Card Payment".equalsIgnoreCase(paymentType)) {
 					boolean f = dao2.saveOrder(orderList);
-					resp.sendRedirect("RazorPay.jsp");
+					sendEmail(email,orderList);
+//					resp.sendRedirect("RazorPay.jsp");
+					resp.sendRedirect("order_success.jsp");
 				}else {
 					boolean f = dao2.saveOrder(orderList);
 					if(f) {
@@ -142,7 +143,7 @@ public class OrderServlet extends HttpServlet {
 	            Message message = new MimeMessage(session);
 	            message.setFrom(new InternetAddress(senderEmail));
 	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
-	            message.setSubject("Payment Successful");
+	            message.setSubject("Order Details");
 	            message.setText(emailContent.toString());
 	            Transport.send(message);
 	            System.out.println("Email sent successfully to " + recipientEmail);
